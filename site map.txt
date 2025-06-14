@@ -1,0 +1,16 @@
+cfp-cmd-app/
+├── assets/          # Fichiers statiques
+└── auth/            #  
+|     |_ includes/   #
+├── config/          # Configuration
+├── controllers/     # Contrôleurs
+└── includes         # 
+├── models/          # Modèles
+├── views/           # Vues
+├── migrations/      # Migrations DB
+├── storage/         # Stockage (cache, logs)
+├── uploads/         # Fichiers uploadés
+├── vendor/          # Dépendances
+├── .env.example     # Variables d'environnement
+├── index.php        # Point d'entrée
+└── db.sql           # Schéma de base de données

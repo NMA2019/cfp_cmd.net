@@ -1,0 +1,20 @@
+{
+    "name": "cfp_cmd/net",
+    "description": "Projet WebSocket avec Ratchet",
+    "type": "project",
+    "require": {
+      "cboden/ratchet": "^0.4.4",
+      "ratchet/pawl": "^0.3.5"
+    },
+    "autoload": {
+      "psr-4": {
+        "App\\": "src/"
+      }
+    },
+    "scripts": {
+      "start-server": "php src/server.php"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+  }
+  

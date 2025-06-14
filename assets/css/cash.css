@@ -1,0 +1,276 @@
+/* cash.css - Styles pour le module de caisse */
+
+/* Structure principale */
+.container-cash {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Cartes de synthèse */
+.solde-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.solde-card {
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.solde-card:hover {
+    transform: translateY(-5px);
+}
+
+.solde-card h5 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.solde-card .card-value {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Carte des entrées */
+.card-entrees {
+    background: linear-gradient(135deg, #28a745 0%, #5cb85c 100%);
+    border-left: 5px solid #218838;
+}
+
+/* Carte des sorties */
+.card-sorties {
+    background: linear-gradient(135deg, #dc3545 0%, #e35d6a 100%);
+    border-left: 5px solid #c82333;
+}
+
+/* Carte du solde */
+.card-solde {
+    background: linear-gradient(135deg, #007bff 0%, #3d8bfd 100%);
+    border-left: 5px solid #0069d9;
+    grid-column: 1 / -1;
+}
+
+/* Boutons d'action */
+.btn-cash-action {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-new-transaction {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-new-transaction:hover {
+    background-color: #0069d9;
+    color: white;
+}
+
+/* Tableau des transactions */
+.table-transactions {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table-transactions thead {
+    background-color: #007bff;
+    color: white;
+}
+
+.table-transactions th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 500;
+}
+
+.table-transactions td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e9ecef;
+    vertical-align: middle;
+}
+
+.table-transactions tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.table-transactions tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Badges pour les types de transactions */
+.badge-entree {
+    background-color: #28a745;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: white;
+}
+
+.badge-sortie {
+    background-color: #dc3545;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: white;
+}
+
+/* Liens de paiement */
+.payment-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.payment-link:hover {
+    text-decoration: underline;
+}
+
+/* Modal */
+.modal-cash {
+    border-radius: 10px;
+    border: none;
+}
+
+.modal-cash .modal-header {
+    background-color: #007bff;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    padding: 15px 20px;
+}
+
+.modal-cash .modal-title {
+    font-weight: 500;
+}
+
+.modal-cash .modal-body {
+    padding: 20px;
+}
+
+.modal-cash .form-group {
+    margin-bottom: 20px;
+}
+
+.modal-cash .form-label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.modal-cash .form-control,
+.modal-cash .form-select {
+    border-radius: 5px;
+    padding: 10px 15px;
+    border: 1px solid #ced4da;
+}
+
+.modal-cash .form-control:focus,
+.modal-cash .form-select:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Pagination */
+.pagination-cash {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.page-link {
+    color: #007bff;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+.page-link:hover {
+    color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .solde-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .table-transactions {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .modal-cash .row {
+        flex-direction: column;
+    }
+    
+    .modal-cash .col-md-6 {
+        width: 100%;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.table-transactions tbody tr {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* Style spécifique pour les montants */
+.montant {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}
+
+.montant-entree {
+    color: #28a745;
+}
+
+.montant-sortie {
+    color: #dc3545;
+}
+
+/* Tooltip personnalisé */
+.tooltip-payment {
+    position: relative;
+    cursor: pointer;
+}
+
+.tooltip-payment:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 100;
+}
